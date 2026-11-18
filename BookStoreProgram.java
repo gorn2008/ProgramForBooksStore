@@ -49,6 +49,7 @@ public class BookStoreProgram {
 					for (String bookName : booksList) {
 						out.println(bookName);
 					}
+					continue;
 				}
 				if ("show".equals(userInput)) {
 					out.println(ENTER_BOOK_NAME_MESSAGE);
@@ -64,6 +65,7 @@ public class BookStoreProgram {
 					} else {
 						out.println("The book was not found.");
 					}
+					continue;
 				}
 				if ("exit".equals(userInput)) {
 					break;		
@@ -91,7 +93,6 @@ public class BookStoreProgram {
 			}
 		}		
 		return result;
-	}
-	
+	}	
 
 }
