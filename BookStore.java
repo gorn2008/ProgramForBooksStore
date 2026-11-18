@@ -10,7 +10,7 @@ import com.Book;
 
 public class BookStore {
 	
-	public final static String DIRECTORY_FOR_JSONS = "C://SomeDir3";
+	public final static String DIRECTORY_FOR_JSONS = "C://BooksRepository";
 	
 	
 	public static void saveBook(JSONObject jsonObject) throws IOException {
