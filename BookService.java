@@ -61,7 +61,13 @@ public class BookService {
 				if (f.getName().equals(bookName + ".json")) {
 					FileReader fr = new FileReader(f);			
 					JSONObject JSONObjectForCurrentFile = new JSONObject(fr.readAllAsString());	
-					return JSONObjectForCurrentFile.getInt(Book.JSON_BOOK_ID_KEY);
+					try {
+						int i = JSONObjectForCurrentFile.getInt(Book.JSON_BOOK_ID_KEY);
+						return i;
+					}
+					catch (Exception e) {
+						return files.length + 1;
+					}
 				}
 			}
 			return files.length + 1;
