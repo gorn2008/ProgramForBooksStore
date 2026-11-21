@@ -10,7 +10,7 @@ import java.util.List;
 public class BookStoreProgram {
 	
 	public final static String STORE_MESSAGE = "Books Store console application.";
-	public final static String CYCLE_MESSAGE = "Select action to do (add, list, show, exit)";
+	public final static String CYCLE_MESSAGE = "Select action to do (add, edit, sell, list, show, exit)";
 	public final static String ENTER_BOOK_NAME_MESSAGE = "Please enter book name.";
 	public final static String ENTER_BOOK_AUTHOR_MESSAGE = "Please enter book author.";
 	public final static String ENTER_BOOK_YEAR_MESSAGE = "Please enter book year.";
@@ -19,10 +19,11 @@ public class BookStoreProgram {
 	
 	public final static String ENTER_PASSWORD_MESSAGE = "Please enter password.";
 	public final static String ENTER_PASSWORD_MESSAGE_2 = "Your password is incorrect. Please try again.";
+	public final static String APPLICATION_TERMINATED_MESSAGE = "All attempts to enter password are used. The application is terminated.";
 	public final static String PASSWORD = "superstore";
 	
 	public static void main(String[] args) throws IOException {	
-		System.out.println(STORE_MESSAGE);		
+		out.println(STORE_MESSAGE);		
 		BookService bookService = new BookService();		
 		if (isAdminAuthentificated()) {			
 			while (true) {
@@ -72,6 +73,8 @@ public class BookStoreProgram {
 				}				
 			}
 		
+		} else {
+			out.println(APPLICATION_TERMINATED_MESSAGE);
 		}
 	}
 	
@@ -93,6 +96,7 @@ public class BookStoreProgram {
 			}
 		}		
 		return result;
-	}	
+	}
+	
 
 }
